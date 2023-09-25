@@ -3,7 +3,6 @@ import axios from 'axios';
 import JumbotronTemplate from '../components/JumbotronTemplate';
 import Usertable from '../components/UserTable';
 import "bootstrap/dist/css/bootstrap.min.css";
-import UserTable from '../components/UserTable';
 
 function View2() {
     const pageHeaderItems = {
@@ -15,7 +14,7 @@ function View2() {
 
     // Reads all users. Sends the GET request to API
     useEffect(() => {
-        axios.get('https://agile-dawn-81028-38ff5888a187.herokuapp.com/api/user/api/user')
+        axios.get('https://agile-dawn-81028-38ff5888a187.herokuapp.com/api/user')
         .then(res => {
             setUserList(res.data)
         })
@@ -26,7 +25,7 @@ function View2() {
             <JumbotronTemplate words={pageHeaderItems} />
             <br />
             <div className='container justify-items-center align-items-center'>
-                <UserTable userList={userList} />
+                <Usertable userList={userList} />
             </div>
             
         </div>
